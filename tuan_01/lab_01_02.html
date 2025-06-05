@@ -7,9 +7,10 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<style>
-		table, th, td {
+		.lichhoc table, .lichhoc th, .lichhoc td {
 			border:1px solid black;
 		}
+		.login label { display: block;}
 		.abulm {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
@@ -23,6 +24,9 @@
 			width: 120px;
 			height: 120px;
 		}
+		.rating {color: #ddd; cursor: pointer;}
+		.start {transition: color 0.2s;}
+		.start:hover,.start.active {color: #ffd700;}
 	</style>
 	<body>
 		<h1>Phần 1: HTML cơ bản</h1>
@@ -34,7 +38,7 @@
 			<li>Math</li>
 			<li>Art</li>
 		</ul>
-		<table>
+		<table class="lichhoc">
 			<tr>
 				<th>Thứ</th>
 				<th>Môn học</th>
@@ -91,9 +95,9 @@
 			<input type="tel"></br>
 			<label>Giới tính</lable></br>
 			<label>Nam</label>
-			<input type="radio">
+			<input type="radio" name="gioitinh">
 			<label>Nữ</label>
-			<input type="radio"></br>
+			<input type="radio" name=gioitinh></br>
 			<button>nút gửi</button>
 		</form>
 		</br>
@@ -136,28 +140,132 @@
 		<p>Click to link below to see more information</p>
 		<a target="_blank" href="https://github.com/Zebra2711/sketchbook.msixbundle">link project A</a>
 
+
+<h1>Phần 3: Biểu mẫu nâng cao</h1>
+<form class="login">
+	<table>
+		<tr>
+			<td><label>User name</label></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td><label>Password</label></td>
+			<td><input type="password"></td>
+		</tr>
+	</table>
+	<button type="submit">Login</button>
+</form>
+</br>
+
+<h3>Form khảo sát ý kiến người dùng</h3>
+
+<form class="khaosat">
+	<table>
+		<tr>
+			<td><label>Tên</label></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td><label>Giới tính</label></td>
+			<label>
+				Nam
+				<input type="radio" id="nam" name="gioitinh">
+			</label>
+			<label>
+				Nữ
+				<input type="radio" id="nu" name="gioitinh">
+			</label></br>
+		</tr>
+		<tr>
+			<td><label>Bảo hành</label></td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td><label>Full option</label></td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td><label>Yêu cầu đặc biệt</label></td>
+			<td><textarea rows="4" cols="50"></textarea></td>
+		</tr>
+		<tr>
+			<label>Choose:</label>
+			<select name="somthing">
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+		</tr>
+	</table>
+	<button type="submit">Login</button>
+</form>
+
+<h3>Form đặt bàn quán ăn</h3>
+<form class="datban">
+	<table>
+		<tr>
+			<td><label>Tên</label></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td><label>Số người</label></td>
+			<td><input type="number"></td>
+		</tr>
+		<tr>
+			<td><label>Date time</label></td>
+			<td><input type="datetime-local"></td>
+		</tr>
+		<tr>
+			<td><label>Yêu cầu đặc biệt</label></td>
+			<td><textarea rows="4" cols="50"></textarea></td>
+		</tr>
+	</table>
+	<button type="submit">Đặt Bàn</button>
+</form>
+</br>
+
+<h3>Form gửi phản hồi khách hàng</h3>
+
+<form class="report">
+	<p>Rating</p>
+	<div class="rating">
+		<span class="start">*</span>
+		<span class="start">*</span>
+		<span class="start">*</span>
+		<span class="start">*</span>
+		<span class="start">*</span>
+	</div>
+	<table>
+		<tr>
+			<td><label>ý  kiến:</label></td>
+			<td><textarea rows="4" cols="50"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Email</label></td>
+			<td><input type="email"></td>
+		</tr>
+	</table>
+	<button type="submit">Submit</button>
+</form>
+
+
+<h3>Form thanh toán đơn hàng</h3>
 <!--
-TODO:
-
-Phần 3: Biểu mẫu nâng cao
-Form đăng nhập
- Gồm: username, password, nút đăng nhập.
-
-
-Form khảo sát ý kiến người dùng
- Sử dụng radio, checkbox, textarea, select.
-
-
-Form đặt bàn quán ăn
- Nhập tên, số người, ngày giờ, yêu cầu đặc biệt.
-
-
-Form gửi phản hồi khách hàng
- Kèm đánh giá sao (1–5), ý kiến, email.
-
-
-Form thanh toán đơn hàng
  Gồm thông tin cá nhân, địa chỉ, hình thức thanh toán.
+
+<form class="thanhtoan">
+	<table>
+		<tr>
+			<td><label>Tên</label></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td><label>Password</label></td>
+			<td><input type="password"></td>
+		</tr>
+	</table>
+	<button type="submit">Login</button>
+</form>
 
 Phần 4: Dự án nhỏ
 Trang bán hàng sản phẩm điện thoại
