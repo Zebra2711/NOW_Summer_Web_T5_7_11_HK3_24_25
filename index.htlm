@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LABWEB20242025</title>
+    </head>
+    <body>
+        <h1>Bài tập thực hành môn hệ thông web HK3 2024-2025</h1>
+        <p>21139151_HoangCaoTri</p>
+        <ul>
+            <li><a href="tuan_01/lab_01_02.html">Lab 1-2</a></li>
+        </ul>
+    </body>
+</html>
