@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-table, th, td {
-  border:1px solid black;
-}
+  table, th, td {
+    border:1px solid black;
+  }
+  .abulm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+  figure {magrin: 0; text-align: center;}
+  figure img {
+    magrin-top: 2px;
+    padding: 0px;
+    width: 120px;
+    height: 120px;
+  }
 </style>
 <body>
   <h1>Phần 1: HTML cơ bản</h1>
   <p>Hoàng Cao Trí<p>
-  <img src="https://picsum.photos/200/300.webp
-" alt="PFP" width="150">
+  <img src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
   </hr>
   <p>Mon hoc yeu thich</p>
   <ul>
@@ -85,4 +97,87 @@ table, th, td {
   </form>
   </br>
   <a target="_blank" href="https://github.com/Zebra2711">link github</a>
+
+
+
+  <h1>Phần 2: Làm việc với hình ảnh & media</h2>
+  <figure>
+    <img src="https://picsum.photos/200/300.webp" alt="random_picture" style="width:20%">
+    <figcaption>Random picture on picsum.photos</figcaptoin>
+  </figure>
+  <div class="abulm">
+    <figure>
+      <img src="https://picsum.photos/200/300.webp" alt="random_picture">
+      <figcaption>Anh 1</figcaptoin>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/200/300.webp" alt="random_picture">
+      <figcaption>Anh 2</figcaptoin>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/200/300.webp" alt="random_picture">
+      <figcaption>Anh 3</figcaptoin>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/200/300.webp" alt="random_picture">
+      <figcaption>Anh 4</figcaptoin>
+    </figure>
+  </div>
+
+  <iframe src="https://www.youtube.com/embed/3HfJj5S_tbk" title="This shouldn't be Possible..."></iframe>
+  </br>
+  <audio controls>
+    <source src="https://cdn.pixabay.com/download/audio/2024/10/18/audio_883a8b2ed8.mp3" type="audio/mp3">
+  </audio>
+
+
+  <h2>Profile cá nhân</h2>
+  <img src="https://avatars.githubusercontent.com/u/89755535" alt="" width="120" height="120">
+  <h3>Project A</h3>
+  <p>Click to link below to see more information</p>
+  <a target="_blank" href="https://github.com/Zebra2711/sketchbook.msixbundle">link project A</a>
+
+<!--
+TODO:
+
+Phần 3: Biểu mẫu nâng cao
+Form đăng nhập
+ Gồm: username, password, nút đăng nhập.
+
+
+Form khảo sát ý kiến người dùng
+ Sử dụng radio, checkbox, textarea, select.
+
+
+Form đặt bàn quán ăn
+ Nhập tên, số người, ngày giờ, yêu cầu đặc biệt.
+
+
+Form gửi phản hồi khách hàng
+ Kèm đánh giá sao (1–5), ý kiến, email.
+
+
+Form thanh toán đơn hàng
+ Gồm thông tin cá nhân, địa chỉ, hình thức thanh toán.
+
+Phần 4: Dự án nhỏ
+Trang bán hàng sản phẩm điện thoại
+ Hiển thị danh sách sản phẩm, giá, nút mua.
+
+
+Trang thông tin du lịch một địa danh
+ Có tiêu đề, ảnh, mô tả, bản đồ (dùng iframe Google Map).
+
+
+Trang tin tức đơn giản
+ Hiển thị tiêu đề bài viết, ảnh, nội dung ngắn, nút “Đọc tiếp”.
+
+
+Trang lịch sự kiện
+ Dùng bảng hoặc danh sách để thể hiện các sự kiện sắp tới.
+
+
+Tạo CV cá nhân bằng HTML
+ Gồm các phần: Thông tin cá nhân, Kỹ năng, Kinh nghiệm, Học vấn.
+-->
 </body>
