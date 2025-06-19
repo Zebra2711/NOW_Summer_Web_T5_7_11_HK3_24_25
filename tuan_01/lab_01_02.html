@@ -7,31 +7,60 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<style>
+		*{
+			padding: 0;
+		}
+		#pfp {
+			border-bottom-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+		.lichhoc {
+			text-align: center;
+		}
 		.lichhoc table, .lichhoc th, .lichhoc td {
 			border:1px solid black;
 		}
 		.login label { display: block;}
 		.abulm {
+			background-image: linear-gradient(#e78585, #9198e5);
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 10px;
 			padding: 10px;
 		}
-		figure {magrin: 0; text-align: center;}
+		figure {margin: 0; text-align: center;}
 		figure img {
-			magrin-top: 2px;
+			margin-top: 2px;
 			padding: 0px;
 			width: 120px;
 			height: 120px;
 		}
-		.rating {color: #ddd; cursor: pointer;}
-		.start {transition: color 0.2s;}
-		.start:hover,.start.active {color: #ffd700;}
+		.rating {
+			color: #ddd;
+			cursor: pointer;
+			font-size: 30px;
+		}
+		.star {
+			transition: color 0.2s;
+		}
+		.star:hover,
+		.star.active {
+			color: #ffd700;
+		}
+		.ytvideo {
+			border-radius: 5px;
+			border: 20px groove rgb(70, 185, 70);
+		}
+		audio {
+			margin: 20px 20px 20px 20px;
+			border: 1px solid blueviolet;
+			border-radius: 30px;
+		}
 	</style>
 	<body>
 		<h1>Phần 1: HTML cơ bản</h1>
 		<p>Hoàng Cao Trí<p>
-		<img src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+		<img id="pfp" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
 		</hr>
 		<p>Mon hoc yeu thich</p>
 		<ul>
@@ -126,8 +155,8 @@
 				<figcaption>Anh 4</figcaptoin>
 			</figure>
 		</div>
-
-		<iframe src="https://www.youtube.com/embed/3HfJj5S_tbk" title="This shouldn't be Possible..."></iframe>
+		<br>
+		<iframe class="ytvideo" src="https://www.youtube.com/embed/3HfJj5S_tbk" title="This shouldn't be Possible..."></iframe>
 		</br>
 		<audio controls>
 			<source src="https://cdn.pixabay.com/download/audio/2024/10/18/audio_883a8b2ed8.mp3" type="audio/mp3">
@@ -139,7 +168,6 @@
 		<h3>Project A</h3>
 		<p>Click to link below to see more information</p>
 		<a target="_blank" href="https://github.com/Zebra2711/sketchbook.msixbundle">link project A</a>
-
 
 <h1>Phần 3: Biểu mẫu nâng cao</h1>
 <form class="login">
@@ -226,32 +254,59 @@
 
 <h3>Form gửi phản hồi khách hàng</h3>
 
-<form class="report">
-	<p>Rating</p>
-	<div class="rating">
-		<span class="start">*</span>
-		<span class="start">*</span>
-		<span class="start">*</span>
-		<span class="start">*</span>
-		<span class="start">*</span>
-	</div>
-	<table>
-		<tr>
-			<td><label>ý  kiến:</label></td>
-			<td><textarea rows="4" cols="50"></textarea></td>
-		</tr>
-		<tr>
-			<td><label>Email</label></td>
-			<td><input type="email"></td>
-		</tr>
-	</table>
-	<button type="submit">Submit</button>
-</form>
+	<form class="report">
+		<p>Rating:</p>
+		<div class="rating" id="rating">
+			<span class="star" data-value="1">★</span>
+			<span class="star" data-value="2">★</span>
+			<span class="star" data-value="3">★</span>
+			<span class="star" data-value="4">★</span>
+			<span class="star" data-value="5">★</span>
+		</div>
+		<table>
+			<tr>
+				<td><label>ý  kiến:</label></td>
+				<td><textarea rows="4" cols="50"></textarea></td>
+			</tr>
+			<tr>
+				<td><label>Email</label></td>
+				<td><input type="email"></td>
+			</tr>
+		</table>
+		<button type="submit">Submit</button>
+	</form>
+	<script>
+        const stars = document.querySelectorAll('.star');
+        let rating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                rating = parseInt(star.dataset.value);
+                updateStars();
+            });
+
+            star.addEventListener('mouseover', () => {
+                const hoverValue = parseInt(star.dataset.value);
+                stars.forEach((s, i) => {
+                    s.classList.toggle('active', i < hoverValue);
+                });
+            });
+        });
+
+        document.getElementById('rating').addEventListener('mouseleave', updateStars);
+
+        function updateStars() {
+            stars.forEach((star, i) => {
+                star.classList.toggle('active', i < rating);
+            });
+        }
+    </script>
+	
 
 
 <h3>Form thanh toán đơn hàng</h3>
-<!--
- Gồm thông tin cá nhân, địa chỉ, hình thức thanh toán.
+
+<!--Gồm thông tin cá nhân, địa chỉ, hình thức thanh toán.-->
 
 <form class="thanhtoan">
 	<table>
@@ -260,13 +315,22 @@
 			<td><input type="text"></td>
 		</tr>
 		<tr>
-			<td><label>Password</label></td>
-			<td><input type="password"></td>
+			<td><label>Địa chỉ</label></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+		<td><label>Hình thức thanh toán:</label></td>
+		<td>
+			<label>Visa</label>
+			<input type="radio" id="visa" name="thanhtoan">
+			<label>Trực tiếp</label>
+			<input type="radio" id="tienmat" name="thanhtoan"></br>
+		</td>
 		</tr>
 	</table>
-	<button type="submit">Login</button>
+	<button type="submit">Next</button>
 </form>
-
+<!--
 Phần 4: Dự án nhỏ
 Trang bán hàng sản phẩm điện thoại
  Hiển thị danh sách sản phẩm, giá, nút mua.
