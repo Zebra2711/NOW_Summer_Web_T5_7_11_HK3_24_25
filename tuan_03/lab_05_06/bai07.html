@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery img {
+        border: 1px double blueviolet;
+        margin: 5px;
+    }
+
+    @media only screen and (max-width: 950px){
+        .gallery {
+            grid-template-columns: auto auto;
+        }
+    }
+
+    @media only screen and (max-width: 720px){
+        .gallery {
+            grid-template-columns: auto;
+        }
+    }
+</style>
+<body>
+    <div class="gallery">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+        <img id="imgae_01" src="https://picsum.photos/200/300.webp" alt="PFP" width="150">
+    </div>
+</body>
+</html>
