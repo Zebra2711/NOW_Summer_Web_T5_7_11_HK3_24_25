@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    li {
+        list-style: none;
+        padding: 10px;
+        border: 1px dotted blue;
+    }
+    .menu {
+        display: flex;
+        border: 1px solid;
+        justify-content: center;
+    }
+    @keyframes animatinRY {
+        from {background-image: linear-gradient(greenyellow, yellow);}
+        to {background-color: red;}
+    }
+    li:hover{
+        background-color: greenyellow;
+        animation-name: animatinRY;
+        animation-duration: 1s;
+    }
+    li:active{
+        color: blue;
+    }
+</style>
+<body>
+    <div class="menu">
+        <li>Option A</li>
+        <li>Option B</li>
+        <li>Option C</li>
+        <li>Option D</li>
+        <li>Option E</li>
+        <li>Option F</li>
+        <li>Option G</li>
+    </div>
+</body>
+</html>
