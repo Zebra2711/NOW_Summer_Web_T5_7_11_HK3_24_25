@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* border: 1px solid; */
+    }
+    .form{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form form{
+        display: grid;
+        grid-template-columns: auto auto;
+        border: 1px solid blue;
+        padding: 5px;
+        width: 500px;
+        min-width: 300px;
+    }
+    .gt{
+        display: grid;
+        grid-template-columns: auto auto;
+        /* border: 2px solid red */
+    }
+    .gt_lb {
+        display: flex;
+        align-items: center;
+    }
+    .end {
+        display: flex;
+        /* border: 2px solid blue; */
+        justify-content: end;
+    }
+    @media only screen and (max-width: 720px) {
+        .form form{
+            display: grid;
+            grid-template-columns: auto;
+            /* border: 1px solid blue; */
+            padding: 5px;
+            width: 500px;
+            min-width: 300px;
+        }
+        .form label, .form input{
+            margin-top: 10px 0 10px;
+        }
+        .form button{
+            width: 30px;
+        }
+        .form .foot {
+            display: flex;
+            justify-self: center;
+        }
+    }
+</style>
+<body>
+    <div class="form">
+		<form action="">
+			<label>Tên:</label>
+			<input type="text">
+			<label>Email:</label>
+			<input type="text">
+			<label>Số điện thoại:</label>
+			<input type="tel">
+            <div class="gt">
+                <div class="gt_lb"><label>Giới tính:</lable></div>
+                <div class="gt_radio">
+                    <div class="end">
+                        <label>Nam</label>
+                        <input type="radio" name="gioitinh">
+                        <label>Nữ</label>
+                        <input type="radio" name=gioitinh>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+			<div class="foot">
+                <button>nút gửi</button>
+            </div>
+		</form>
+	</div>
+</body>
+</html>
